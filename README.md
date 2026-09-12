@@ -4,6 +4,7 @@
 
 Gabriel Lopes da Silva - Matrícula 22611427
 Enzo Rodrigues Nascimento - Matrícula 22612071
+Lucas Vicente - lucas.vicente@sempreceub.com 
 
 ## Descrição
 
