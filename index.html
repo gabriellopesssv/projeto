@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Pokedex online: pesquise Pokémon e descubra seus principais dados."
+    />
+    <title>PokeAtlas | Explore o mundo Pokémon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="nav container" aria-label="Navegação principal">
+        <a class="brand" href="./" aria-label="PokeAtlas, início">
+          <span class="brand-mark">✦</span>
+          <span>Poke<span>Atlas</span></span>
+        </a>
+        <span class="api-badge">Dados via PokéAPI</span>
+      </nav>
+
+      <div class="hero-content container">
+        <h1>Descubra seu próximo<br /><span>Pokémon favorito.</span></h1>
+        <p class="hero-copy">
+          Pesquise por nome ou número e veja tipo, altura, peso e habilidades
+          na hora.
+        </p>
+
+        <form class="search-form" id="search-form">
+          <label class="sr-only" for="campo-busca">Nome ou número do Pokémon</label>
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <input
+            id="campo-busca"
+            name="pokemon"
+            type="search"
+            placeholder="Ex.: pikachu ou 25"
+            autocomplete="off"
+            required
+          />
+          <button id="botao-buscar" type="submit">Buscar</button>
+        </form>
+
+        <div class="quick-searches" aria-label="Pesquisas rápidas">
+          <span>Tente</span>
+          <button type="button" data-search="pikachu">Pikachu</button>
+          <button type="button" data-search="charizard">Charizard</button>
+          <button type="button" data-search="gengar">Gengar</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container main-content">
+      <section id="resultado" aria-live="polite" aria-atomic="true">
+        <div class="empty-state">
+          <div class="pokeball" aria-hidden="true"><span></span></div>
+          <h2>Quem vamos procurar?</h2>
+          <p>Digite um nome ou número acima para começar.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="container footer">
+      <p>Dados fornecidos pela <a href="https://pokeapi.co/" target="_blank" rel="noreferrer">PokéAPI</a>.</p>
+    </footer>
+  </body>
+</html>

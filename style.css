@@ -1,0 +1,361 @@
+:root {
+  --ink: #1b2338;
+  --paper: #fbf8f3;
+  --line: #e4ddd0;
+  --red: #e6484a;
+  --gold: #f3b33d;
+  --muted: #6b6458;
+  --radius: 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Nunito", system-ui, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.container {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+a {
+  color: inherit;
+}
+
+.hero {
+  background: var(--ink);
+  color: var(--paper);
+  padding-bottom: 72px;
+  border-radius: 0 0 40px 40px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 24px 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+  font-size: 1.15rem;
+  text-decoration: none;
+  color: var(--paper);
+}
+
+.brand span span {
+  color: var(--gold);
+}
+
+.brand-mark {
+  color: var(--red);
+}
+
+.api-badge {
+  font-size: 0.85rem;
+  color: var(--paper);
+  opacity: 0.65;
+}
+
+.hero-content {
+  padding-top: 56px;
+  max-width: 640px;
+}
+
+.hero-content h1 {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0 0 18px;
+}
+
+.hero-content h1 span {
+  color: var(--gold);
+}
+
+.hero-copy {
+  font-size: 1.05rem;
+  color: rgba(251, 248, 243, 0.75);
+  margin: 0 0 32px;
+  max-width: 480px;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  background: var(--paper);
+  border-radius: 999px;
+  padding: 6px 6px 6px 20px;
+  gap: 8px;
+  max-width: 460px;
+}
+
+.search-icon {
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+.search-form input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--ink);
+  padding: 10px 0;
+}
+
+.search-form button {
+  border: none;
+  background: var(--red);
+  color: white;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 12px 22px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.search-form button:hover {
+  background: #d13638;
+}
+
+.search-form button:focus-visible,
+.quick-searches button:focus-visible,
+.search-form input:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.quick-searches {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+  font-size: 0.9rem;
+  color: rgba(251, 248, 243, 0.6);
+}
+
+.quick-searches button {
+  border: 1px solid rgba(251, 248, 243, 0.3);
+  background: transparent;
+  color: var(--paper);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.quick-searches button:hover {
+  background: rgba(251, 248, 243, 0.1);
+  border-color: rgba(251, 248, 243, 0.6);
+}
+
+.main-content {
+  padding: 56px 24px 40px;
+  min-height: 320px;
+}
+
+.empty-state,
+.status-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+  color: var(--muted);
+  padding: 40px 0;
+}
+
+.empty-state h2,
+.status-state h2 {
+  color: var(--ink);
+  font-size: 1.3rem;
+  margin: 8px 0 0;
+}
+
+.pokeball {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, var(--red) 0 48%, var(--ink) 48% 52%, var(--paper) 52% 100%);
+  border: 3px solid var(--ink);
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.pokeball span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  background: var(--paper);
+  border: 3px solid var(--ink);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pokeball-sad {
+  background: linear-gradient(to bottom, var(--muted) 0 48%, var(--ink) 48% 52%, var(--paper) 52% 100%);
+}
+
+.spinner {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 3px solid var(--line);
+  border-top-color: var(--red);
+  animation: spin 0.8s linear infinite;
+  margin-bottom: 8px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.poke-card {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.poke-media {
+  background: color-mix(in srgb, var(--accent) 18%, var(--paper));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 20px;
+}
+
+.poke-media img {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+}
+
+.poke-number {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  font-weight: 800;
+  color: var(--accent);
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+.poke-info {
+  padding: 28px 32px;
+}
+
+.poke-info h2 {
+  margin: 0 0 12px;
+  font-size: 1.7rem;
+  font-weight: 800;
+}
+
+.type-list {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.type-badge {
+  background: var(--type-color);
+  color: white;
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding: 5px 14px;
+  border-radius: 999px;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 0;
+}
+
+.stat-grid dt {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.stat-grid dd {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.footer {
+  padding: 24px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+
+
+@media (max-width: 640px) {
+  .poke-card {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .search-form {
+    flex-wrap: wrap;
+    border-radius: 24px;
+    padding: 12px;
+  }
+
+  .search-form button {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation: none;
+  }
+}
